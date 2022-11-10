@@ -1,0 +1,25 @@
+  .login {
+    padding: 16px;
+    font-size: large;
+    margin-top: 10%;
+    margin-left: 40%;
+    margin-right: 40%;
+    background: red;
+  }
+
+  .login input{
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 80%;
+    margin-bottom: 16px;
+  }
+
+  .login label{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .login button{
+    margin-left: 16px;
+    margin-right: 16px;
+  }

@@ -1,0 +1,194 @@
+.navbar-nav .navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+.grid-search {
+    display: grid;
+    row-gap: 15px;
+}
+
+.grid-search > input {
+    width: 75%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 25px;
+}
+
+
+.button-grid{
+    display:  grid;
+    grid-template-columns:  5em 5em;
+    justify-content:  end;
+    margin-right:  7.25%
+}
+
+.button-grid > button {
+    background-color: #2a90f5; /* Green */
+    display:  inline-block;
+    width: 70px;
+    height: 50px;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-right: 12.5%;
+    /*float:  right;*/
+    justify-self: end; /* justify-self: start is for left allign within grids*/
+}
+
+.button-grid > button:hover {
+    background-color: #312af5;
+}
+
+/*https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp#contact*/
+.filters {
+    width: 75%;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    overflow: auto;
+    white-space: nowrap;
+    border: 1px solid black;
+    border: 1px solid #000;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.filters a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    margin-right: 5px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.filters a:hover {
+    background-color: #777;
+}
+.filters a:button {
+    background-color: #777;
+}
+
+p {
+    margin-left: 12.5%;
+    font-size: 24px;
+}
+
+.results {
+    width: 85%;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.result-item{
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr; /*picture info view/quickadd */
+    grid-template-rows: auto;
+    row-gap: 25px;
+    width: 100%;
+    height: 75px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    border-radius: 25px;
+}
+
+.profile-frame{
+    width: 50px;
+    height: 50px;
+    border: 3px solid #000;
+    border-radius: 100%;
+    margin: auto;
+    padding: 10px 10px;
+}
+
+.result-item > img{
+  width: 100%;
+  height: 100%;
+}
+
+.result-short-info{
+    display: grid;
+    grid-template-rows: 30px;
+    margin-left: 15px;
+}
+
+.result-short-info > h2{
+    font-size: 15px;
+}
+
+.result-short-info > p{
+    font-size: 14px;
+    text-align: start;
+    margin: 0;
+}
+
+.preview{
+    width: 100%;
+    height: 90px;
+
+    border: 1px solid #000;
+    border-radius: 25px;
+}
+
+.preview > img{
+
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: end;
+    align-items: center;
+
+    /*border-top:  1px solid #000;*/
+
+    margin-top: 15px; /* FIND A WAY TO make it stick to the bottom to prevent hard coding values like this */
+
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.nav-bar-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:  1px solid #000;
+    border-radius:  15px;
+    width: 60px;
+    height: 60px;
+}
+
+.nav-bar-items-active {
+   background-color: #312af5;
+}
+
+
+

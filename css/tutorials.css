@@ -1,3 +1,42 @@
-p {
-    color: red;
-  }
+.grid {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  text-align: center;
+}
+
+.title{
+  color: black;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.arm-picture {
+  color: black;
+  width: 200px;
+  height: 200px;
+  padding-left: 10px;
+  margin-right: 50px;
+}
+
+.arm-buttons {
+  color: blue;
+  width: 75%;
+  height: 15%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  border: red;
+  row-gap: 5px;
+}
+
+.arm-row {
+  border-color: black;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  border: 1px solid black; 
+  width: fit-content; 
+  height: fit-content;
+  column-gap: 50px;
+}

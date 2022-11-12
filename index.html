@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lift Buddy</title>
-    <link rel="stylesheet" href="css/login_homepage.css">
-    <script src="js/login.js"></script>
-</head>
-<body>
-    <div class="login">
-        <label>Username:</label>
-        <input type="text" placeholder="Enter Username" name="Username" required>
-        <label>Password:</label>
-        <input type="text" placeholder="Enter Password" name="Password" required>
-        <button type="submit">Login</button>
-    </div>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>LiftBuddy</title>
+        <link rel="stylesheet" href="css/index.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,500,600,800' rel='stylesheet'>
+    </head>
+    <body>
+        <img class="logo" src="assets/img/icons-logo.gif" alt="logo"/>
+
+        <h1 class="desc">Your weightlifting companion,<br> dedicated to keeping you on track.</h3>
+
+        <div class="login">
+            <label>Username:</label><br>
+            <input type="text" placeholder="Enter Username" name="Username" required><br>
+            <label>Password:</label><br>
+            <input type="password" placeholder="Enter Password" name="Password" required><br>
+            <a class="resetpw" href="#forgotpassword">Forgot password?</a><br>
+            <button id="login" type="submit">Login</button><br>
+            <label>New here?</label><br>
+            <button id="register" type="register">Create new account 💪</button><br>
+        </div>
+        <div class="navbar">
+            <a class="active">
+                <img src="assets/img/icons8-home-50.png" alt="Home" />
+            </a>
+            <a>
+                <img
+                    src="assets/img/icons8-increase-50.png"
+                    alt="Progress"
+                />
+            </a>
+            <a>
+                <img
+                    src="assets/img/icons8-add-50.png"
+                    alt="Add Exercise"
+                />
+            </a>
+            <a>
+                <img
+                    src="assets/img/icons8-user-account-50.png"
+                    alt="Find New Friends"
+                />
+            </a>
+            <a>
+                <img
+                    src="assets/img/icons8-video-playlist-50.png"
+                    alt="Tutorials"
+                />
+            </a>
+        </div>
+        <div class="footnote">
+            <h5>Made with ♡, by weightlifters for weightlifters.</h5>
+        </div>
+    </body>
 </html>

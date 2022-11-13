@@ -11,3 +11,7 @@ function loginClicked(){
         errorMessage.style.display = "block"
     }
 }
+
+function registerClicked(){
+    window.location.href = "register.html   "
+}

@@ -1,22 +1,22 @@
 const fake_friends = [
 	{
 		name: "Andrew Balmakund",
-		description: "Started this journey lifting very light",
+		description: "Started this journey lifting very light. Looking To find someone or a group of individuals to help push eachtother",
 		filters: [0,3],
 	},
 	{
 		name: "Andrew John",
-		description: "ANDREW JOHN DESCRPITION",
+		description: "I would consider my self an expert learn seeking to help teach anyone that is looking into weight training",
 		filters: [0,3],
 	},
 	{
 		name: "Andrew Smith",
-		description: "ANDREW SMITH DESCRIPTIOn",
+		description: "Looking for someone to help push me in the gym, also looking to do the same",
 		filters: [0,3],
 	},
 	{
 		name: "Brian Smith",
-		description: "BRANDON SMITH DESCRIPTION",
+		description: "New to the area, looking to help find people to meet and workout with",
 		filters: [0,3],
 	},
 
@@ -48,9 +48,12 @@ var results = [];
 function find_friend(name, filter,  fake_friends){
 	var results = []
 
+	console.log(name.length);
+
 	//return all names
-	if (!(name) && !(filter)){ 
-		return name_array(fake_friends); 
+	if (name === "" && filter == null ){ 
+		console.log("Both names and filter arr are empty");
+		return fake_friends; 
 	}
 
 	//both name and filter provided
@@ -77,11 +80,13 @@ function find_friend(name, filter,  fake_friends){
 }
 
 
+// make into functions	
 $('#name_search').ready(function() {
 	$('#search_button').click(function() {
 			$('#results').empty();
 			results = [];
             var search_name = $("#name_search").val();
+			console.log("Search Name = " + typeof(search_name));
 			results = find_friend(search_name, null, fake_friends);
 			console.log(results);
 
@@ -89,9 +94,9 @@ $('#name_search').ready(function() {
 			const user = results[i];
 			const usr_name = user.name;
 			var usr_description = user.description;
-			const slice_amount = 25;
-			if (usr_description.length > slice_amount){
-				descriusr_descriptionption = usr_description.slice(0,slice_amount) + '...';
+			const slice_amount = 45;
+			if (usr_description && usr_description.length > slice_amount){
+				usr_description = usr_description.slice(0,slice_amount) + '...';
 			}
 		
 			$('#results').append(
@@ -123,9 +128,9 @@ function create_results(){
 		const user = results[i];
 		const usr_name = user.name;
 		var usr_description = user.description;
-		const slice_amount = 25;
-		if (usr_description.length > slice_amount){
-			descriusr_descriptionption = usr_description.slice(0,slice_amount) + '...';
+		const slice_amount = 45;
+		if (usr_description && usr_description.length > slice_amount){
+			usr_description = usr_description.slice(0,slice_amount) + '...';
 		}
 	
 		$('#results').append(
@@ -137,6 +142,15 @@ function create_results(){
 				'<h2>' + usr_name + '</h2>'+
 				'<p>' + usr_description + '</p>' + 
 			'</div>'+
+
+			'<div class="results-button-grid">' + 
+				'<button id=add-' + i + '> Add' + 
+				'</button>' + 
+
+				'<button id=view-' + i + '> View' + 
+				'</button>' + 
+			
+			'</div>' +
 
 			
 		'</div>' )

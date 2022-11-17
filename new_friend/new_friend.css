@@ -17,10 +17,17 @@ h1 {
 .grid-search {
     display: grid;
     row-gap: 15px;
+    grid-template-columns: 5fr 5fr;
 }
 
-.grid-search > input {
-    width: 75%;
+
+.search{
+    display: grid;
+    row-gap: 15px;
+}
+
+.search > input {
+    width: 85%;
     margin: 0 auto;
     background-color: #f9f9f9;
     padding: 10px;
@@ -56,9 +63,11 @@ h1 {
     background-color: #312af5;
 }
 
+
+
 /*https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp#contact*/
 .filters {
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
     background-color: #f0f0f0;
     overflow: auto;
@@ -68,6 +77,34 @@ h1 {
     border-radius: 25px;
     padding: 10px;
 }
+
+.filters::-webkit-scrollbar {
+    height: 10px;
+    
+  }
+
+  
+  
+.filters::-webkit-scrollbar-track {
+    
+    
+  }
+  
+.filters::-webkit-scrollbar-thumb {
+    background-color: rgb(0,0,0,0.5);
+    border-radius: 20px;
+    border: 3px solid rgb(0,0,0,0.5);
+  }
+
+  
+.filters::-webkit-scrollbar-track-piece:end {
+    margin-right: 15px; 
+  }
+  
+.filters::-webkit-scrollbar-track-piece:start {
+    margin-left: 15px;
+  }
+
 
 .filters a {
     display: inline-block;
@@ -83,6 +120,8 @@ h1 {
 .filters a:hover {
     background-color: #777;
 }
+
+
 .filters a:button {
     background-color: #777;
 }
@@ -104,7 +143,7 @@ p {
 
 .result-item{
     display: grid;
-    grid-template-columns: 2fr 5fr 2fr; /*picture info view/quickadd */
+    grid-template-columns: 1.25fr 5fr 1.5fr; /*picture info view/quickadd */
     grid-template-rows: auto;
     row-gap: 25px;
     width: 100%;
@@ -145,9 +184,20 @@ p {
     margin: 0;
 }
 
+.results-button-grid{
+    display: inline-grid;
+    align-items: center;
+    grid-template-rows: 0.75fr;
+}
+
+.results-button-grid > button{
+    height: 25px;
+    width: 75%;
+}
+
 .preview{
     width: 100%;
-    height: 90px;
+    height: 100%;
 
     border: 1px solid #000;
     border-radius: 25px;

@@ -1,8 +1,8 @@
 .grid {
   display: grid;
-  background-color: aqua;
+  /* background-color: aqua; */
   width: 80%;
-  height: fit-content;
+  height: 100%;
   align-content: center;
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: 1fr 1fr;
@@ -21,7 +21,7 @@
 
 .title{
   color: black;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -29,54 +29,72 @@
 
 .tutorials {
   display: flexbox;
-  border: 5px solid;
   margin-left: auto;
   width: 100%;
   padding: 10px;
   align-items: center;
   justify-content: center;
-  height: fit-content;
+  height: 700px;
 }
 
 .arms {
   display: grid;
+  grid-template-rows: 0.25fr 2fr;
+  grid-template-columns: auto;
   align-items: center;
-  justify-content: center;
-  background-color: red;
+  /* justify-content: center; */
+  background-color: lightcoral;
   width: 50%;
   margin-left: auto;
-  width: fit-content;
-  height: auto;
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
 }
 
 .legs {
   display: grid;
+  grid-template-rows: 0.25fr 2fr;
+  grid-template-columns: auto;
   align-items: center;
-  justify-content: center;
-  background-color: green;
+  /* justify-content: center; */
+  background-color: lightskyblue;
   width: 50%;
   width: fit-content;
   height: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
 }
 
 .chest {
   display: grid;
+  grid-template-rows: 0.25fr 2fr;
+  grid-template-columns: auto;
   align-items: center;
-  justify-content: center;
-  background-color: yellow;
+  /* justify-content: center; */
+  background-color: lightsalmon;
   width: 50%;
   margin-left: auto;
   width: fit-content;
   height: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
 }
 
 .abs {
   display: grid;
+  grid-template-rows: 0.25fr 2fr;
+  grid-template-columns: auto;
   align-items: center;
-  justify-content: center;
-  background-color: purple;
+  /* justify-content: center; */
+  background-color: lightgreen;
   width: fit-content;
   height: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
 }
 
 .pic-box {
@@ -87,16 +105,31 @@
 img {
   height: 100%;
   width: 100%;
+  margin-left: 0;
 }
 
 .box-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
   grid-template-rows: auto;
   column-gap: 10%;
+  height: fit-content;
 }
 
 .buttons-area {
   display: grid;
   row-gap: 5%;
+  margin-right: 10%;
+}
+
+.nav-bar {
+  padding-bottom: 2%;
+}
+
+h1{
+  margin: 0;
+}
+
+button{
+  border-radius: 20px;
 }

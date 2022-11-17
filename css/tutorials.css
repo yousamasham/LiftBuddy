@@ -2,7 +2,7 @@
   display: grid;
   background-color: aqua;
   width: 80%;
-  height: 80%;
+  height: fit-content;
   align-content: center;
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: 1fr 1fr;
@@ -15,11 +15,13 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  row-gap: 5%;
+  column-gap: 5%;
 }
 
 .title{
   color: black;
-  padding-bottom: 20px;
+  padding-bottom: 5%;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -33,38 +35,68 @@
   padding: 10px;
   align-items: center;
   justify-content: center;
+  height: fit-content;
 }
 
 .arms {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   background-color: red;
   width: 50%;
   margin-left: auto;
+  width: fit-content;
+  height: auto;
 }
 
 .legs {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   background-color: green;
   width: 50%;
+  width: fit-content;
+  height: auto;
 }
 
 .chest {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   background-color: yellow;
   width: 50%;
   margin-left: auto;
+  width: fit-content;
+  height: auto;
 }
 
 .abs {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   background-color: purple;
-  width: 50%;
+  width: fit-content;
+  height: auto;
+}
+
+.pic-box {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.box-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 10%;
+}
+
+.buttons-area {
+  display: grid;
+  row-gap: 5%;
 }

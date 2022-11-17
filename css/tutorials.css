@@ -1,42 +1,70 @@
 .grid {
   display: grid;
+  background-color: aqua;
+  width: 80%;
+  height: 80%;
+  align-content: center;
   grid-template-columns: 0.5fr 0.5fr;
-  row-gap: 10px;
-  column-gap: 10px;
+  grid-template-rows: 1fr 1fr;
+  margin: auto auto;
+  /* grid-template-areas: 
+    "arms  arms legs legs" 
+    "arms  arms legs legs" 
+    "chest chest chest  abs"
+    "chest chest chest  abs"; */
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .title{
   color: black;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.arm-picture {
-  color: black;
-  width: 200px;
-  height: 200px;
-  padding-left: 10px;
-  margin-right: 50px;
+.tutorials {
+  display: flexbox;
+  border: 5px solid;
+  margin-left: auto;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
-.arm-buttons {
-  color: blue;
-  width: 75%;
-  height: 15%;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr;
-  border: red;
-  row-gap: 5px;
+.arms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 50%;
+  margin-left: auto;
 }
 
-.arm-row {
-  border-color: black;
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  border: 1px solid black; 
-  width: fit-content; 
-  height: fit-content;
-  column-gap: 50px;
+.legs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  width: 50%;
+}
+
+.chest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+  width: 50%;
+  margin-left: auto;
+}
+
+.abs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: purple;
+  width: 50%;
 }

@@ -144,10 +144,10 @@ function create_results(){
 			'</div>'+
 
 			'<div class="results-button-grid">' + 
-				'<button id=add-' + i + '> Add' + 
+				'<button id=_add-' + i + '> Add' + 
 				'</button>' + 
 
-				'<button id=view-' + i + '> View' + 
+				'<button id=_view-' + i + '> View' + 
 				'</button>' + 
 			
 			'</div>' +
@@ -159,26 +159,39 @@ function create_results(){
 		}
 
 		$('#preview').append(
-			'<div class="result-item" id="_results-' + 0 + '">' + 
-				'<div class="profile-frame">' + 
-					'<img src="assets/img/icons8-user-50.png">' +
+			 
+				'<div class="img-border">' + 
+					'<img src="assets/img/icons8-user-50.png" class="preview-img-prop">' +
 				'</div>' + 
-				'<div class="result-short-info">'+
-					'<h2>' + results[0].name + '</h2>'+
-					'<p>' + results[0].description + '</p>' + 
-				'</div>'+
-	
-				
-			'</div>' )
+				'<h1>' + results[0].name + '</h1>'+
+				'<p> "' + results[0].description + '"</p>' 
+			
+			 )
 
 }
 
-//Find certain result elements
-$("[id^=_results-").click(function() {
-	alert('CLICKED');
-});
+
+
+
 
 create_results();
+
+
+$("[id^=_add-]").click(function() {
+	let selected_usr = ($(this).attr("id"));
+	selected_usr = selected_usr.slice(selected_usr.indexOf("-") + 1);
+	console.log(selected_usr);
+	alert('Friend request sent to ' + results[selected_usr].name  );
+
+	$(this).prop('disabled', true);
+
+});
+
+
+$("[id^=_view-]").click(function() {
+	alert('CLICKED');
+
+});
 console.log(find_friend("Andrew", null, fake_friends));
 
 //export  {fake_friends};

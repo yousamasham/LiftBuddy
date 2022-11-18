@@ -55,7 +55,16 @@ const names = name_array(fake_friends);
 
 var results = [];
 var friends_added = [];
+var filters_selected = [];
 
+function find_matching_filter(selected_filter, usr_filters){
+// https://stackoverflow.com/questions/16312528/check-if-an-array-contains-any-element-of-another-array-in-javascript	
+	if (usr_filters.some(current_filter => selected_filter.indexOf(current_filter) >= 0)){
+		return true;
+	}else{
+		return false;
+	}
+}
 
 function find_friend(name, filter,  fake_friends){
 	var results = []
@@ -70,7 +79,14 @@ function find_friend(name, filter,  fake_friends){
 
 	//both name and filter provided
 	if (name && filter){ 
-
+		fake_friends.filter(user =>{
+			var usr_name = user.name;
+			var usr_filter = user.filters;
+			if (usr_name.indexOf(name) >= 0 && find_matching_filter(filter, usr_filter) === true){
+				results.push(user);
+			}
+		
+		})
 
 	//only name provided
 	}else if (name && !(filter)){ 
@@ -91,6 +107,14 @@ function find_friend(name, filter,  fake_friends){
 	}
 }
 
+$('#filters').ready(function(){
+	for (let i = 0; i < filters_arr.length; i++){
+		$('#filters').append(
+			'<button class="filter-button" id="_filter-button-' + i + '">' + filters_arr[i] +'</button>'
+			);
+	}
+	
+});
 
 // make into functions	
 $('#name_search').ready(function() {
@@ -103,29 +127,38 @@ $('#name_search').ready(function() {
 			console.log(results);
 
 			for (let i = 0; i < results.length; i++) {
-			const user = results[i];
-			const usr_name = user.name;
-			var usr_description = user.description;
-			const slice_amount = 45;
-			if (usr_description && usr_description.length > slice_amount){
-				usr_description = usr_description.slice(0,slice_amount) + '...';
-			}
-		
-			$('#results').append(
-			'<div class="result-item" id="_results-' + i + '">' + 
-				'<div class="profile-frame">' + 
-					'<img src="assets/img/icons8-user-50.png">' +
-				'</div>' + 
-				'<div class="result-short-info">'+
-					'<h2>' + usr_name + '</h2>'+
-					'<p>' + usr_description + '</p>' + 
-				'</div>'+
-
-				
-			'</div>' )
-
+				const user = results[i];
+				const usr_name = user.name;
+				var usr_description = user.description;
+				const slice_amount = 45;
+				if (usr_description && usr_description.length > slice_amount){
+					usr_description = usr_description.slice(0,slice_amount) + '...';
+				}
 			
-			}
+				$('#results').append(
+				'<div class="result-item" id="_results-' + i + '">' + 
+					'<div class="profile-frame">' + 
+						'<img src="assets/img/icons8-user-50.png">' +
+					'</div>' + 
+					'<div class="result-short-info">'+
+						'<h2>' + usr_name + '</h2>'+
+						'<p>' + usr_description + '</p>' + 
+					'</div>'+
+		
+					'<div class="results-button-grid">' + 
+						'<button class="results-button-add" id=_add-' + i + '> Add' + 
+						'</button>' + 
+		
+						'<button class="results-button-view" id=_view-' + i + '> View' + 
+						'</button>' + 
+					
+					'</div>' +
+		
+					
+				'</div>' )
+		
+				
+				}
 
 	});
 });
@@ -217,19 +250,19 @@ $("[id^=_view-]").click(function() {
 	 );
 	 $('#preview').append(
 
-		'<div class="filters" id="filters">'
+		'<div class="filters" id="preview-filters">'
 		 ); 
 
 		for (let i = 0; i < get_filters.length; i++){
 		
-			$('#filters').append(
-				'<a class="filter-button">' + get_filters[i] + '</a>'
+			$('#preview-filters').append(
+				'<button class="filter-button">' + get_filters[i] + '</button>'
 
 			);
 
 		}
 
-		$('#filters').append(
+		$('#preview-filters').append(
 			'</div>'
 		); 
 
@@ -288,6 +321,35 @@ $("[id^=_add-]").each(function() {
 	})
 	
 });
+
+
+$('#filters').ready(function () {
+	$("[id^=_filter-button-]").each(function() {
+		$(this).click(function (event){
+			event.preventDefault();
+			let clicked_filter = ($(this).attr("id"));
+			clicked_filter = clicked_filter.slice(clicked_filter.indexOf("on-") + 3);
+			clicked_filter = parseInt(clicked_filter,10);
+
+
+			if (filters_selected.includes(clicked_filter) === true){
+				$(this).removeClass("filter-button-selected");
+				filters_selected.splice(filters_selected.indexOf(clicked_filter),1);
+			}
+		
+			else{
+				$(this).addClass("filter-button-selected");
+	
+				filters_selected.push(parseInt(clicked_filter,10));
+			}
+
+			console.log(filters_selected);
+	
+		})
+		
+	})
+});
+
 
 
 console.log(find_friend("Andrew", null, fake_friends));

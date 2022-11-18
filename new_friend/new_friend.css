@@ -14,6 +14,14 @@ h1 {
     font-size: 40px;
     text-align: center;
 }
+
+.new-friend{
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+}
 .grid-search {
     display: grid;
     row-gap: 15px;
@@ -21,7 +29,7 @@ h1 {
     grid-template-rows: auto;
     margin: auto auto;
     align-items: start;
-    justify-items: center;
+    justify-items: start;
 
 }
 
@@ -29,11 +37,12 @@ h1 {
 .search{
     display: grid;
     row-gap: 15px;
+    justify-items: center;
 }
 
 .search > input {
-    width: 85%;
-    margin: 0 auto;
+    width: 82.5%;
+    
     background-color: #f9f9f9;
     padding: 10px;
     border: 1px solid #000;
@@ -44,7 +53,7 @@ h1 {
 .button-grid{
     display:  grid;
     grid-template-columns:  5em 5em;
-    justify-content:  end;
+    justify-self:  end;
     margin-right:  7.25%
 }
 
@@ -72,8 +81,8 @@ h1 {
 
 /*https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp#contact*/
 .filters {
-    width: 85%;
-    margin: 0 auto;
+    width: 82.5%;
+    
     background-color: #f0f0f0;
     overflow: auto;
     white-space: nowrap;
@@ -81,11 +90,12 @@ h1 {
     border: 1px solid #000;
     border-radius: 25px;
     padding: 10px;
+    overflow-x: scroll;
+    justify-self: center;
 }
 
 .filters::-webkit-scrollbar {
     height: 10px;
-    
   }
 
   
@@ -113,52 +123,78 @@ h1 {
 
  .filter-button {
     display: inline-block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px;
     text-decoration: none;
     margin-right: 5px;
-    background-color: #333;
     border-radius: 10px;
 }
 
  .filter-button:hover {
-    background-color: #777;
+    background-color: #444;
 }
 
 
-.filter-button:button {
+.filter-button-selected {
     background-color: #777;
 }
 
 p {
-    margin-left: 12.5%;
+    margin-left: 0%;
     font-size: 24px;
 }
 
 .results {
     width: 85%;
     height: 75%;
-    margin: 0 auto;
+   
     background-color: #f0f0f0;
     border: 1px solid #000;
     border-radius: 25px;
-    justify-content: center;
+    justify-content: start;
+    align-items: start;
+    overflow-y: auto;
+    overflow-x: hidden;
 
 
 }
+
+
+.results::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  
+  
+.results::-webkit-scrollbar-track {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+  }
+  
+.results::-webkit-scrollbar-thumb {
+    background-color: rgb(0,0,0,0.5);
+    border-radius: 20px;
+    border: 3px solid rgb(0,0,0,0.5);
+  }
+
+  
+
 
 .result-item{
     display: grid;
     grid-template-columns: 1.25fr 5fr 1.5fr; /*picture info view/quickadd */
     grid-template-rows: auto;
     row-gap: 25px;
-    width: 100%;
-    height: 75px;
-    margin: 0 auto;
+    width: 95%;
+    height: 100px;
     background-color: #f0f0f0;
     border: 1px solid #000;
     border-radius: 25px;
+    margin-left: 2.5%;
+    margin-top: 5px;
+    
 }
 
 .selected-item{
@@ -204,22 +240,43 @@ p {
 .results-button-add{
     height: 25px;
     width: 75%;
+    border-radius: 25px;
+}
+
+.results-button-add:hover{
+    background-color: rgb(0,0,0,0.5);
 }
 
 .results-button-view{
     height: 25px;
     width: 75%;
+    border-radius: 25px;
+}
+
+.results-button-view:hover{
+    background-color: rgb(0,0,0,0.5);
 }
 
 .preview-grid{
     width: 85%;
+    display: grid;
+    justify-self: center;
+    margin-top: 5%;
+   
 }
+
+.preview-grid > p{
+    margin-left: 2.5%;
+    margin-bottom: 2.5%;
+   
+}
+
 
 .preview{
     display: grid;  
     grid-template-columns: 1fr;
     grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr; /* Picture, Name, Description, Filters, Button */
-    width: 85%;
+    width: 100%;
     height: 100%;
 
     border: 1px solid #000;

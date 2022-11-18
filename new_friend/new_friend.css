@@ -17,7 +17,12 @@ h1 {
 .grid-search {
     display: grid;
     row-gap: 15px;
-    grid-template-columns: 5fr 5fr;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: auto;
+    margin: auto auto;
+    align-items: start;
+    justify-items: center;
+
 }
 
 
@@ -106,7 +111,7 @@ h1 {
   }
 
 
-.filters a {
+ .filter-button {
     display: inline-block;
     color: white;
     text-align: center;
@@ -117,12 +122,12 @@ h1 {
     border-radius: 10px;
 }
 
-.filters a:hover {
+ .filter-button:hover {
     background-color: #777;
 }
 
 
-.filters a:button {
+.filter-button:button {
     background-color: #777;
 }
 
@@ -133,12 +138,14 @@ p {
 
 .results {
     width: 85%;
-    height: 300px;
+    height: 75%;
     margin: 0 auto;
     background-color: #f0f0f0;
     border: 1px solid #000;
     border-radius: 25px;
     justify-content: center;
+
+
 }
 
 .result-item{
@@ -152,6 +159,10 @@ p {
     background-color: #f0f0f0;
     border: 1px solid #000;
     border-radius: 25px;
+}
+
+.selected-item{
+    background-color: rgb(0,0,0,0.3);
 }
 
 .profile-frame{
@@ -170,8 +181,8 @@ p {
 
 .result-short-info{
     display: grid;
-    grid-template-rows: 30px;
-    margin-left: 15px;
+    grid-template-rows: 35px;
+    margin-left: 0px;
 }
 
 .result-short-info > h2{
@@ -190,20 +201,45 @@ p {
     grid-template-rows: 0.75fr;
 }
 
-.results-button-grid > button{
+.results-button-add{
     height: 25px;
     width: 75%;
+}
+
+.results-button-view{
+    height: 25px;
+    width: 75%;
+}
+
+.preview-grid{
+    width: 85%;
 }
 
 .preview{
     display: grid;  
     grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 1fr 2fr 1fr 1fr; /* Picture, Name, Description, Filters, Button */
-    width: 100%;
+    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr; /* Picture, Name, Description, Filters, Button */
+    width: 85%;
     height: 100%;
 
     border: 1px solid #000;
     border-radius: 25px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-add-button{
+    height: 25px;
+    width: 75px;
+    justify-self: end;
+    border-radius: 25px;
+    margin-right: 7.5%;
+    font-size: 18px;
+}
+
+.preview-add-button:hover{
+  background-color: rgb(0,0,0,0.5);
 }
 
 .preview-img-prop{

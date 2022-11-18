@@ -1,8 +1,14 @@
+const filters_arr = [
+	"New","Intermediate", "Expert", 
+	"Young Age", "Middle Age", "Old Age",
+	"Lightweight", "Middleweight", "Heavyweight"
+];
+
 const fake_friends = [
 	{
 		name: "Andrew Balmakund",
 		description: "Started this journey lifting very light. Looking To find someone or a group of individuals to help push eachtother",
-		filters: [0,3],
+		filters: [2,5,8],
 	},
 	{
 		name: "Andrew John",
@@ -16,6 +22,16 @@ const fake_friends = [
 	},
 	{
 		name: "Brian Smith",
+		description: "New to the area, looking to help find people to meet and workout with",
+		filters: [0,3],
+	},
+	{
+		name: "James Smith",
+		description: "New to the area, looking to help find people to meet and workout with",
+		filters: [0,3],
+	},
+	{
+		name: "James Allice",
 		description: "New to the area, looking to help find people to meet and workout with",
 		filters: [0,3],
 	},
@@ -35,14 +51,10 @@ function name_array(fake_friends){
 
 
 const names = name_array(fake_friends);
-const filters = [
-	"New","Intermediate", "Expert", 
-	"Young Age", "Middle Age", "Old Age",
-	"Lightweight", "Middleweight", "Heavyweight"
-];
 
 
 var results = [];
+var friends_added = [];
 
 
 function find_friend(name, filter,  fake_friends){
@@ -144,10 +156,10 @@ function create_results(){
 			'</div>'+
 
 			'<div class="results-button-grid">' + 
-				'<button id=_add-' + i + '> Add' + 
+				'<button class="results-button-add" id=_add-' + i + '> Add' + 
 				'</button>' + 
 
-				'<button id=_view-' + i + '> View' + 
+				'<button class="results-button-view" id=_view-' + i + '> View' + 
 				'</button>' + 
 			
 			'</div>' +
@@ -172,26 +184,112 @@ function create_results(){
 
 
 
-
+let selected_usr = -1;
 
 create_results();
 
 
-$("[id^=_add-]").click(function() {
-	let selected_usr = ($(this).attr("id"));
-	selected_usr = selected_usr.slice(selected_usr.indexOf("-") + 1);
-	console.log(selected_usr);
-	alert('Friend request sent to ' + results[selected_usr].name  );
-
-	$(this).prop('disabled', true);
-
-});
-
 
 $("[id^=_view-]").click(function() {
-	alert('CLICKED');
+	let new_selected_usr = ($(this).attr("id"));
+	new_selected_usr = new_selected_usr.slice(new_selected_usr.indexOf("-") + 1);
+	console.log(new_selected_usr);
+
+
+	let get_filters = [];
+	for (let i = 0; i < fake_friends[new_selected_usr].filters.length; i++){
+		get_filters.push(filters_arr[fake_friends[new_selected_usr].filters[i]]);
+	}
+
+
+	console.log(get_filters);
+	
+	$('#preview').empty();
+	$('#preview').append(
+		
+		'<div class="img-border">' + 
+			'<img src="assets/img/icons8-user-50.png" class="preview-img-prop">' +
+		'</div>' + 
+		'<h1>' + results[new_selected_usr].name + '</h1>'+
+		'<p> "' + results[new_selected_usr].description + '"</p>'
+		
+	
+	 );
+	 $('#preview').append(
+
+		'<div class="filters" id="filters">'
+		 ); 
+
+		for (let i = 0; i < get_filters.length; i++){
+		
+			$('#filters').append(
+				'<a class="filter-button">' + get_filters[i] + '</a>'
+
+			);
+
+		}
+
+		$('#filters').append(
+			'</div>'
+		); 
+
+
+		$('#preview').append(
+			'<button class="preview-add-button" id="_add_preview-' + new_selected_usr + '"> Add' + 
+			'</button>' 
+		);
+
+		if ($("#_add-" + new_selected_usr ).is(":disabled") === true || friends_added.includes(new_selected_usr) === true){
+			($("#_add_preview-" + new_selected_usr )).prop('disabled', true);
+		}
+
+		$("[id^=_add_preview-]").each(function() {
+			$(this).click(function (){
+					if ($(this).is(":disabled") !== true){
+						console.log($("#_add-" + new_selected_usr ).is(":disabled"));
+
+						let selected_usr = ($(this).attr("id"));
+						selected_usr = selected_usr.slice(selected_usr.indexOf("w-") + 2);
+						console.log(selected_usr);
+						alert('Friend request sent to ' + results[selected_usr].name  );
+						($(this)).prop('disabled', true);
+						friends_added.push(new_selected_usr);
+						$("#_add-" + new_selected_usr ).prop('disabled', true);
+					}
+				
+				
+			})
+			
+		});
+		
+
+	 if (new_selected_usr !== selected_usr){
+	 	$('#_results-'+new_selected_usr).addClass("selected-item");
+		 $('#_results-'+selected_usr).removeClass("selected-item");
+		selected_usr = new_selected_usr;
+	}
 
 });
+
+
+
+$("[id^=_add-]").each(function() {
+	$(this).click(function (){
+		let selected_usr = ($(this).attr("id"));
+		selected_usr = selected_usr.slice(selected_usr.indexOf("-") + 1);
+		console.log(selected_usr);
+		alert('Friend request sent to ' + results[selected_usr].name  );
+
+		$(this).prop('disabled', true);
+
+		friends_added.push(selected_usr);
+		$("#_add_preview-" + selected_usr ).prop('disabled', true);
+
+	})
+	
+});
+
+
 console.log(find_friend("Andrew", null, fake_friends));
 
 //export  {fake_friends};

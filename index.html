@@ -5,34 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Less necessary since Edge's migration to Chromium -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lift Buddy</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,500,600,800' rel='stylesheet'>
+    <link rel="stylesheet" href="progress.css"/>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><button>Home</button></li>
-            <li><button>Progress</button></li>
-            <li><button>Add Workout</button></li>
-            <li><button>Friends</button></li>
-            <li><button>Tutorials</button></li>
-        </ul>
-    </nav>
-    <div class="progress">
-        <h1>Progress</h1>
-        <p>How has my 
-            <select>
-                <option value="phy">physique</option>
-                <option value="bpw">bench press weight</option>
-            </select> 
-            changed since <input type="datetime-local"/>
-        </p>
-        <img
-            src=""
-            alt=""
-            />
-        <img
-            src=""
-            alt=""
-            />
+    <div class = "progress-page">
+        <nav class="site-nav">
+            <ul class="nav-buttons">
+                <li class="site-section">
+                    <a href="#" class="section-link">Home</a>
+                </li>
+                <li class="site-section">
+                    <a href="#" class="section-link">Progress</a>
+                </li>
+                <li class="site-section">
+                    <a href="#" class="section-link">Add Workout</a>
+                </li>
+                <li class="site-section">
+                    <a href="#" class="section-link">Friends</a>
+                </li>
+                <li class="site-section">
+                    <a href="#" class="section-link">Tutorials</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="progress-interface">
+            <h1>Progress</h1>
+            <p>How has my 
+                <select>
+                    <option value="phy">physique</option>
+                    <option value="bpw">bench press weight</option>
+                </select> 
+                changed since <input type="datetime-local"/>
+            </p>
+            <img
+                src=""
+                alt=""
+                />
+            <img
+                src=""
+                alt=""
+                />
+        </div>
     </div>
 </body>
 </html>

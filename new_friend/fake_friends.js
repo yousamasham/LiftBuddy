@@ -60,6 +60,7 @@ var filters_selected = [];
 function find_matching_filter(selected_filter, usr_filters){
 // https://stackoverflow.com/questions/16312528/check-if-an-array-contains-any-element-of-another-array-in-javascript	
 	if (usr_filters.some(current_filter => selected_filter.indexOf(current_filter) >= 0)){
+		console.log("FOUND FILTER");
 		return true;
 	}else{
 		return false;
@@ -67,29 +68,33 @@ function find_matching_filter(selected_filter, usr_filters){
 }
 
 function find_friend(name, filter,  fake_friends){
-	var results = []
+	let results = []
 
 	console.log(name.length);
+	console.log(filter.length);
 
 	//return all names
-	if (name === "" && filter == null ){ 
+	if (name === "" && filter.length === 0 ){ 
 		console.log("Both names and filter arr are empty");
 		return fake_friends; 
 	}
 
 	//both name and filter provided
-	if (name && filter){ 
+	if (name && filter.length > 0){ 
+		console.log("NAME AND FILTER PROVIDED");
 		fake_friends.filter(user =>{
 			var usr_name = user.name;
 			var usr_filter = user.filters;
 			if (usr_name.indexOf(name) >= 0 && find_matching_filter(filter, usr_filter) === true){
 				results.push(user);
 			}
+			
 		
-		})
-
+		});
+		return results;
+		
 	//only name provided
-	}else if (name && !(filter)){ 
+	}else if (name && filter.length === 0){ 
 		console.log("Name provided, NO FILTER");
 		//console.log(fake_friends);
 
@@ -102,8 +107,17 @@ function find_friend(name, filter,  fake_friends){
 		return results;
 
 	//only filter provided	
-	}else{ 
+	}else{
+		console.log("Name provided, NO FILTER");
+		//console.log(fake_friends);
 
+		fake_friends.filter(user =>{
+			var usr_filter = user.filters;
+			if (find_matching_filter(filter, usr_filter) === true){
+				results.push(user);
+			}
+		})
+		return results;
 	}
 }
 
@@ -116,6 +130,29 @@ $('#filters').ready(function(){
 	
 });
 
+function generate_results(usr_name, usr_description, i){
+	return '<div class="result-item" id="_results-' + i + '">' + 
+	'<div class="profile-frame">' + 
+		'<img src="assets/img/icons8-user-50.png">' +
+	'</div>' + 
+	'<div class="result-short-info">'+
+		'<h2>' + usr_name + '</h2>'+
+		'<p>' + usr_description + '</p>' + 
+	'</div>'+
+
+	'<div class="results-button-grid">' + 
+		'<button class="results-button-add" id=_add-' + i + '> Add' + 
+		'</button>' + 
+
+		'<button class="results-button-view" id=_view-' + i + '> View' + 
+		'</button>' + 
+	
+	'</div>' +
+
+	
+'</div>'  ;
+}
+
 // make into functions	
 $('#name_search').ready(function() {
 	$('#search_button').click(function() {
@@ -123,7 +160,7 @@ $('#name_search').ready(function() {
 			results = [];
             var search_name = $("#name_search").val();
 			console.log("Search Name = " + typeof(search_name));
-			results = find_friend(search_name, null, fake_friends);
+			results = find_friend(search_name, filters_selected, fake_friends);
 			console.log(results);
 
 			for (let i = 0; i < results.length; i++) {
@@ -136,26 +173,8 @@ $('#name_search').ready(function() {
 				}
 			
 				$('#results').append(
-				'<div class="result-item" id="_results-' + i + '">' + 
-					'<div class="profile-frame">' + 
-						'<img src="assets/img/icons8-user-50.png">' +
-					'</div>' + 
-					'<div class="result-short-info">'+
-						'<h2>' + usr_name + '</h2>'+
-						'<p>' + usr_description + '</p>' + 
-					'</div>'+
-		
-					'<div class="results-button-grid">' + 
-						'<button class="results-button-add" id=_add-' + i + '> Add' + 
-						'</button>' + 
-		
-						'<button class="results-button-view" id=_view-' + i + '> View' + 
-						'</button>' + 
-					
-					'</div>' +
-		
-					
-				'</div>' )
+						generate_results(usr_name,usr_description, i)
+				)
 		
 				
 				}
@@ -202,14 +221,10 @@ function create_results(){
 
 		
 		}
-
+		$('#preview').empty();
 		$('#preview').append(
 			 
-				'<div class="img-border">' + 
-					'<img src="assets/img/icons8-user-50.png" class="preview-img-prop">' +
-				'</div>' + 
-				'<h1>' + results[0].name + '</h1>'+
-				'<p> "' + results[0].description + '"</p>' 
+				'<h1> Select the view button to preview a profile </h1>'
 			
 			 )
 
@@ -351,7 +366,19 @@ $('#filters').ready(function () {
 });
 
 
+$('#clear-button').click(function(){
+		create_results();
+		friends_added = [];
+		filters_selected = [];
 
-console.log(find_friend("Andrew", null, fake_friends));
+		for (let i = 0; i < filters_arr.length; i++){
+			$('#_filter-button-' + i).removeClass("filter-button-selected");
+		}
+		$('#name_search').val('');
+
+
+});
+
+
 
 //export  {fake_friends};

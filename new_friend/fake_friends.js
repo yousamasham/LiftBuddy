@@ -204,7 +204,7 @@ function create_results(){
 			'</div>' + 
 			'<div class="result-short-info">'+
 				'<h2>' + usr_name + '</h2>'+
-				'<p>' + usr_description + '</p>' + 
+				'<p>"' + usr_description + '"</p>' + 
 			'</div>'+
 
 			'<div class="results-button-grid">' + 

@@ -62,7 +62,13 @@
 
 @media only screen and (max-width:885px){
   .grid{display: block;}
-  .excercise-group{height: 40%;}
+  .excercise-group{height: 40%; padding-top: 10px;}
+  .arms{margin-bottom: 20px;}
+  .legs{margin-bottom: 20px;}
+  .chest{margin-bottom: 20px;}
+  .abs{margin-bottom: 20px;}
+  .buttons-area{padding-bottom: 20%;}
+  .box-content{margin-top: -7%;}
 }
 
 .legs {
@@ -103,7 +109,6 @@ img {
   display: grid;
   row-gap: 5%;
   margin-right: 10%;
-  border: 1px solid black;
   height: 100%;
 }
 
@@ -112,7 +117,7 @@ img {
 }
 
 h1{
-  margin: 0;
+  margin-top: 0%;
 }
 
 button{

@@ -1,14 +1,18 @@
 function loginClicked(){
-    var username = document.getElementById("Username").value;
-    var password = document.getElementById("Password").value;
+    var username = document.getElementById("Username");
+    var password = document.getElementById("Password");
     var errorMessage = document.getElementById("loginError")
+    username.style.borderBlockColor = "unset"
+    password.style.borderBlockColor = "unset"
     errorMessage.style.display = "none"
 
-    if (username == "admin" && password == "admin"){
+    if (username.value == "admin" && password.value == "admin"){
         window.location.href = "homepage.html"
     }
 
     else{
+        username.style.borderBlockColor = '#A6192E'
+        password.style.borderBlockColor = '#A6192E'
         errorMessage.style.display = "block"
     }
 }

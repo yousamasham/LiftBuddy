@@ -11,7 +11,7 @@ let arms = [
     {
         name: "Skull Crusher",
         front_vid: "./WorkoutVids/skullcrusher_front.mp4",
-        side_vid: "./WorkoutVids/skullcrusher_side",
+        side_vid: "./WorkoutVids/skullcrusher_side.mp4",
         How: "Lie back on a bench set to a 30-degree decline. Grip the EZ bar on the innermost grips and extend your arms straight up, palms facing your feet. Keeping your elbows fixed and tucked in, lower the bar until it is about an inch from your forehead. Slowly extend your arms back to the starting position without locking your elbows.",
         Why: " Don't be scared of the name, this is one of the arm exercises for ultimate triceps builders. Set the bench to decline and it'll increase your range of motion for increased muscle activation.",
         link: "https://www.youtube.com/watch?v=d_KZxkY_0cM&list=PLOytLgEoo4wemK6fbf1eBC1beH4qjCIra&index=2&t=24s"
@@ -19,7 +19,7 @@ let arms = [
     {
         name: "Chin Up", 
         front_vid: "./WorkoutVids/chin-up_front.mp4",
-        side_vid: "./WorkoutVids/chin-up_side",
+        side_vid: "./WorkoutVids/chin-up_side.mp4",
         How: "Grab the bar shoulder width apart with a supinated grip (palms facing you). With your body hanging and arms fully extended, pull yourself up until your chin is past the bar. Slowly return to starting position. Repeat.",
         Why: "The primary benefits of the chin-up are increasing strength and definition of the upper arms, specifically the biceps, the posterior deltoids of the shoulders and the teres major and latissimus dorsi muscles of the back.",
         link: "https://www.youtube.com/watch?v=bZ6Ysk9jf6E&list=PLOytLgEoo4wemK6fbf1eBC1beH4qjCIra&index=3"

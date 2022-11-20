@@ -9,12 +9,12 @@
 }
 
 .navbar a {
-  padding-top: 12px;
+  padding-top: 0px;
   text-align: center;
   overflow: hidden;
   display: inline;
   color: #f1f1f1;
-  width:19.5%;
+  width: 19.5%;
   height: 75px;
 }
 
@@ -134,7 +134,7 @@ body{
   width: 100%;
 }
 
-img {
+.workout-img {
   height: 100%;
   width: 100%;
   margin-left: 0;

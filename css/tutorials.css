@@ -56,12 +56,12 @@
   width: 100%;
   height: 100%;
   border-radius: 25px;
-  /* background-color: #7A003C; */
-  color: white;
+  background-color: #8BD3E6;
+  /* color: white; */
 }
 
 .arms {
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   margin-left: auto;
 }
 
@@ -82,16 +82,16 @@
 }
 
 .legs {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
 }
 
 .chest {
-  background-color: lightsalmon;
+  /* background-color: lightsalmon; */
   margin-left: auto;
 }
 
 .abs {
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .pic-box {
@@ -134,7 +134,7 @@ h1{
 button{
   border-radius: 20px;
   /* background-color: #FDBF57; */
-  background-color: #7A003C;
-  color: white;
+  background-color: #D2D755;
+  /* color: white; */
   font-family: 'Montserrat';
 }

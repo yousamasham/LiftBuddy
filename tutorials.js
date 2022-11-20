@@ -179,12 +179,18 @@ function renderAbWorkout(){
            
         '<h2 class="workout-title">' + abs[button_num-1].name + '</h1>' +
         '<div class="videos">' +
-            '<video class="video1" autoplay loop>' + 
-            '<source src=' + abs[button_num-1].front_vid + ' type="video/mp4">' +
-            '</video>' +
-            '<video class="video2" autoplay loop>' + 
-            '<source src=' + abs[button_num-1].side_vid + ' type="video/mp4">' +
-            '</video>' +
+            '<div class="video1">' +
+                '<video class="vid1" autoplay loop>' + 
+                '<source src=' + abs[button_num-1].front_vid + ' type="video/mp4">' + 
+                '</video>' +
+                '<p class="front">Front View</p>' +
+            '</div>' +
+            '<div class="video2">' +
+                '<video class="vid2" autoplay loop>' + 
+                '<source src=' + abs[button_num-1].side_vid + ' type="video/mp4">' +
+                '</video> <br>' +
+                '<p class="side">Side View</p>' +
+            '</div>' +
         '</div>' +
         '<div class="description">' +
             '<h3>How :</h3>' +

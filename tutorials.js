@@ -174,9 +174,7 @@ $("[id*=-button-]").each(function(){
 });
 
 function renderAbWorkout(){
-    $('#tutorials').append(
-            
-           
+    $('#tutorials').append(         
         '<h2 class="workout-title">' + abs[button_num-1].name + '</h1>' +
         '<div class="videos">' +
             '<div class="video1">' +
@@ -210,17 +208,21 @@ function renderAbWorkout(){
 }
 
 function renderArmWorkout(){
-    $('#tutorials').append(
-            
-           
+    $('#tutorials').append(         
         '<h2 class="workout-title">' + arms[button_num-1].name + '</h1>' +
         '<div class="videos">' +
-            '<video class="video1" autoplay loop>' + 
-            '<source src=' + arms[button_num-1].front_vid + ' type="video/mp4">' +
-            '</video>' +
-            '<video class="video2" autoplay loop>' + 
-            '<source src=' + arms[button_num-1].side_vid + ' type="video/mp4">' +
-            '</video>' +
+            '<div class="video1">' +
+                '<video class="vid1" autoplay loop>' + 
+                '<source src=' + arms[button_num-1].front_vid + ' type="video/mp4">' + 
+                '</video>' +
+                '<p class="front">Front View</p>' +
+            '</div>' +
+            '<div class="video2">' +
+                '<video class="vid2" autoplay loop>' + 
+                '<source src=' + arms[button_num-1].side_vid + ' type="video/mp4">' +
+                '</video> <br>' +
+                '<p class="side">Side View</p>' +
+            '</div>' +
         '</div>' +
         '<div class="description">' +
             '<h3>How :</h3>' +
@@ -241,16 +243,21 @@ function renderArmWorkout(){
 
 function renderLegWorkout(){
     $('#tutorials').append(
-            
-           
+                 
         '<h2 class="workout-title">' + legs[button_num-1].name + '</h1>' +
         '<div class="videos">' +
-            '<video class="video1" autoplay loop>' + 
-            '<source src=' + legs[button_num-1].front_vid + ' type="video/mp4">' +
-            '</video>' +
-            '<video class="video2" autoplay loop>' + 
-            '<source src=' + legs[button_num-1].side_vid + ' type="video/mp4">' +
-            '</video>' +
+            '<div class="video1">' +
+                '<video class="vid1" autoplay loop>' + 
+                '<source src=' + legs[button_num-1].front_vid + ' type="video/mp4">' + 
+                '</video>' +
+                '<p class="front">Front View</p>' +
+            '</div>' +
+            '<div class="video2">' +
+                '<video class="vid2" autoplay loop>' + 
+                '<source src=' + legs[button_num-1].side_vid + ' type="video/mp4">' +
+                '</video> <br>' +
+                '<p class="side">Side View</p>' +
+            '</div>' +
         '</div>' +
         '<div class="description">' +
             '<h3>How :</h3>' +
@@ -259,6 +266,7 @@ function renderLegWorkout(){
             '<p>' + legs[button_num-1].Why + '</p>' +
         '</div>' 
     )
+
     $('#tutorials').append(
         '<button id="youtube-link">' + "Learn More" + '</button>'
     )
@@ -270,17 +278,21 @@ function renderLegWorkout(){
 }
 
 function renderChestWorkout(){
-    $('#tutorials').append(
-            
-           
+    $('#tutorials').append(      
         '<h2 class="workout-title">' + chest[button_num-1].name + '</h1>' +
         '<div class="videos">' +
-            '<video class="video1" autoplay loop>' + 
-            '<source src=' + chest[button_num-1].front_vid + ' type="video/mp4">' +
-            '</video>' +
-            '<video class="video2" autoplay loop>' + 
-            '<source src=' + chest[button_num-1].side_vid + ' type="video/mp4">' +
-            '</video>' +
+            '<div class="video1">' +
+                '<video class="vid1" autoplay loop>' + 
+                '<source src=' + chest[button_num-1].front_vid + ' type="video/mp4">' + 
+                '</video>' +
+                '<p class="front">Front View</p>' +
+            '</div>' +
+            '<div class="video2">' +
+                '<video class="vid2" autoplay loop>' + 
+                '<source src=' + chest[button_num-1].side_vid + ' type="video/mp4">' +
+                '</video> <br>' +
+                '<p class="side">Side View</p>' +
+            '</div>' +
         '</div>' +
         '<div class="description">' +
             '<h3>How :</h3>' +
@@ -289,6 +301,7 @@ function renderChestWorkout(){
             '<p>' + chest[button_num-1].Why + '</p>' +
         '</div>' 
     )
+
     $('#tutorials').append(
         '<button id="youtube-link">' + "Learn More" + '</button>'
     )

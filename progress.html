@@ -9,44 +9,14 @@
     <link rel="stylesheet" href="css/progress.css"/>
 </head>
 <body>
-    <div class = "progress-page">
-        <nav class="site-nav">
-            <ul class="nav-buttons">
-                <li class="site-section">
-                    <a href="#" class="section-link">Home</a>
-                </li>
-                <li class="site-section">
-                    <a href="#" class="section-link">Progress</a>
-                </li>
-                <li class="site-section">
-                    <a href="#" class="section-link">Add Workout</a>
-                </li>
-                <li class="site-section">
-                    <a href="#" class="section-link">Friends</a>
-                </li>
-                <li class="site-section">
-                    <a href="#" class="section-link">Tutorials</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="progress-interface">
-            <h1>Progress</h1>
-            <p>How has my 
-                <select>
-                    <option value="phy">physique</option>
-                    <option value="bpw">bench press weight</option>
-                </select> 
-                changed since <input type="datetime-local"/>
-            </p>
-            <img
-                src=""
-                alt=""
-                />
-            <img
-                src=""
-                alt=""
-                />
-        </div>
-    </div>
+    <h1 class="title">Progress</h1>
+    <form class="question">
+        <label for="metric">How has my</label>
+        <input type="text" class="metric" placeholder="e.g., physique" name="metric">
+        <label for="">changed since</label>
+        <input type="date" class="date" name="date" min="2022-01-01" max="">
+        <div>?</div>
+    </form>
+    <button type="submit" class="enter">Let's find out!</button>
 </body>
 </html>

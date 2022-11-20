@@ -1,0 +1,105 @@
+  body{
+    padding-top: 120px;
+  }
+  
+  .logo {
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .desc {
+    margin-top: 5%;
+    font-family: "Montserrat";
+    text-align: center;
+    font-weight: 800;
+    font-size: xx-large;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 75px;
+  }
+  
+  .navbar a {
+    float:inline-start;
+    display:flexbox;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    font-size: 17px;
+    width:20%;
+  }
+  
+  .navbar a:hover {
+    background: #FFD100;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .navbar a.active {
+    background-color: #ac1455;
+    color: white;
+  }
+
+  hr .solid {
+    border-top: 3px solid rgb(0, 0, 0);
+    width: 50%;
+  }
+
+  .goals {
+    overflow: hidden;
+    width: 40%;
+    padding: 16px;
+    font-size: large;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat';
+  }
+
+  .goals input {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 30px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: none;
+    padding: 5px;
+  }
+
+  .goals button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: inherit;
+    text-align: center;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    background-color: #ac1455;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .goals button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

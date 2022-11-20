@@ -1,7 +1,4 @@
   body{
-    background-image: linear-gradient(to bottom right,#8BD3E6, #def2f8);
-    background-repeat:no-repeat;
-    background-attachment: fixed;
     padding-top: 120px;
   }
   
@@ -23,7 +20,7 @@
   
   .navbar {
     overflow: hidden;
-    background-color: #FFD100;
+    background-color: #f1f1f1;
     position: fixed;
     top: 0;
     left: 0;
@@ -34,7 +31,7 @@
   .navbar a {
     float:inline-start;
     display:flexbox;
-    color: #FFD100;
+    color: #f1f1f1;
     text-align: center;
     padding: 14px 0px;
     text-decoration: none;
@@ -43,7 +40,7 @@
   }
   
   .navbar a:hover {
-    background: #f1f1f1;
+    background: #FFD100;
     color: black;
     cursor: pointer;
   }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>New Friend</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+        <link href="css/new_friend.css" rel="stylesheet" />
+
+
+    </head>
+    <body>
+        
+        <h1>Find a Gym Pal</h1>
+        <div class="new-friend">
+            <div class="grid-search">
+                <div class="search">
+                <input type="text" placeholder="Name" id="name_search" />
+
+                <div class="filters" id="filters">
+
+                </div>
+
+                <div class="button-grid">
+                    <button id="clear-button">Clear</button>
+                    <button id="search_button">Search</button>
+                </div>
+
+                <div class="results" id="results"></div>
+                </div>
+                <div class="preview-grid" >
+                    <p>Preview...</p>
+                    
+
+                    <div class="preview" id="preview"></div>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="navbar">
+            <a  href="homepage.html">
+                <img src="assets/img/icons8-home-50.png" alt="Home" />
+            </a>
+            <a href="progress.html">
+                <img
+                    src="assets/img/icons8-increase-50.png"
+                    alt="Progress"
+                />
+            </a>
+            <a href="new-records-1.html">
+                <img
+                    src="assets/img/icons8-add-50.png"
+                    alt="Add Exercise"
+                />
+            </a>
+            <a class="active" href="new_friend.html">
+                <img
+                    src="assets/img/icons8-user-account-50.png"
+                    alt="Find New Friends"
+                />
+            </a>
+            <a href="tutorials.html">
+                <img
+                    src="assets/img/icons8-video-playlist-50.png"
+                    alt="Tutorials"
+                />
+            </a>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="new_friend.js"></script>
+    </body>
+</html>

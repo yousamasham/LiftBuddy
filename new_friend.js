@@ -13,27 +13,27 @@ const fake_friends = [
 	{
 		name: "Andrew John",
 		description: "I would consider my self an expert learn seeking to help teach anyone that is looking into weight training",
-		filters: [0,3],
+		filters: [1,4,8],
 	},
 	{
-		name: "Andrew Smith",
+		name: "Albert Smith",
 		description: "Looking for someone to help push me in the gym, also looking to do the same",
-		filters: [0,3],
+		filters: [2,5,8],
 	},
 	{
 		name: "Brian Smith",
 		description: "New to the area, looking to help find people to meet and workout with",
-		filters: [0,3],
+		filters: [0],
 	},
 	{
-		name: "James Smith",
-		description: "New to the area, looking to help find people to meet and workout with",
-		filters: [0,3],
+		name: "Daniel Smith",
+		description: "I am a gym fanatic and love all aspects of weight lifting. Love all kinds of exercises regarding weight lifting",
+		filters: [0,3,7],
 	},
 	{
 		name: "James Allice",
-		description: "New to the area, looking to help find people to meet and workout with",
-		filters: [0,3],
+		description: "New to weight lifting, love to learn from others that are willing to help!",
+		filters: [2,3,8],
 	},
 
 ];

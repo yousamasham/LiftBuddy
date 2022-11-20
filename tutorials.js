@@ -1,3 +1,4 @@
+
 let arms = [
     {
         name: "Bicep Curl",
@@ -29,8 +30,8 @@ let arms = [
         back_vid: "./WorkoutVids/wrist-curl_side",
         How: "Sit on a bench and hold a barbell with your palms facing up. Rest your forearms on your knees and lower the bar towards the floor as far as possible. Curl your wrist upward, pause, then slowly lower.",
         Why: "Your forearms will be on display long after your beach body has gone back into hiding, so give them due care. Your grip strength will be much improved come deadlift day too.",
-        link: "https://www.youtube.com/watch?v=qMtmHwaCmYI&list=PLOytLgEoo4wemK6fbf1eBC1beH4qjCIra&index=4"
-    }
+        link: "https://www.youtube.com/watch?v=qMtmHwaCmYI&list=PLOytLgEoo4wemK6fbf1eBC1beH4qjCIra&index=4",
+    },
 ]
 let legs = [
     {
@@ -134,3 +135,76 @@ let abs = [
         link: "https://www.youtube.com/watch?v=mIYuVpQF3N8&list=PLOytLgEoo4wemK6fbf1eBC1beH4qjCIra&index=16&t=94s"
     }
 ]
+
+let clone_tutorials = $('#tutorials').clone();
+
+$("[id*=-button-]").each(function(){
+    $(this).click(function (){
+        console.log($(this).attr("id"));
+        
+        $('#tutorials').empty();
+        let button_selected = ($(this).attr("id"));
+        category = button_selected.slice(0,button_selected.indexOf("-"));
+        button_num = button_selected.slice(button_selected.indexOf("button-") + 7 ); //"button-" = length 7
+        if(category == "arms"){
+            renderArmWorkout();
+        } else if(category == "legs"){
+            renderLegWorkout();
+        } else if(category == "chest"){
+            renderChestWorkout();
+        } else {
+            renderAbWorkout();
+        }
+
+
+        $('#tutorials').append(
+        '<button id="back-button">' + "Back" + '</button>'
+        )
+
+
+        $("#back-button").click(function(){
+            console.log("here");
+            $('#tutorials').empty();
+            
+            $('#tutorials').replaceWith(clone_tutorials);
+            location.reload(true);
+        });
+    });
+
+});
+
+function renderAbWorkout(){
+    $('#tutorials').append(
+            
+           
+        '<h1 class="random">' + abs[button_num-1].name + '</h1>' +
+        '<p class="random">' + abs[button_num-1].How + '</p>'
+    )    
+}
+
+function renderArmWorkout(){
+    $('#tutorials').append(
+            
+           
+        '<h1 class="random">' + arms[button_num-1].name + '</h1>' +
+        '<p class="random">' + arms[button_num-1].How + '</p>'
+    )    
+}
+
+function renderLegWorkout(){
+    $('#tutorials').append(
+            
+           
+        '<h1 class="random">' + legs[button_num-1].name + '</h1>' +
+        '<p class="random">' + legs[button_num-1].How + '</p>'
+    )
+}
+
+function renderChestWorkout(){
+    $('#tutorials').append(
+            
+           
+        '<h1 class="random">' + chest[button_num-1].name + '</h1>' +
+        '<p class="random">' + chest[button_num-1].How + '</p>'
+    )
+}

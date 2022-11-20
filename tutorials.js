@@ -168,7 +168,7 @@ $("[id*=-button-]").each(function(){
             $('#tutorials').replaceWith(clone_tutorials);
             location.reload(true);
         });
-        $("#tutorials").append($("<link rel='stylesheet' href='./css/styles.css' type='text/css' media='screen' />"));
+        $("#tutorials").append($("<link rel='stylesheet' href='./css/workouts.css' type='text/css' media='screen' />"));
     });
 
 });
@@ -177,28 +177,74 @@ function renderAbWorkout(){
     $('#tutorials').append(
             
            
-        '<h1 class="workout-title">' + abs[button_num-1].name + '</h1>' +
-        '<p class="random">' + abs[button_num-1].How + '</p>',
-    )    
+        '<h2 class="workout-title">' + abs[button_num-1].name + '</h1>' +
+        '<div class="videos">' +
+            '<video class="video1" autoplay loop>' + 
+            '<source src=' + abs[button_num-1].front_vid + ' type="video/mp4">' +
+            '</video>' +
+            '<video class="video2" autoplay loop>' + 
+            '<source src=' + abs[button_num-1].side_vid + ' type="video/mp4">' +
+            '</video>' +
+        '</div>' +
+        '<div class="description">' +
+            '<h3>How :</h3>' +
+            '<p>' + abs[button_num-1].How + '</p>' +
+            '<h3>Why :</h3>' + 
+            '<p>' + abs[button_num-1].Why + '</p>' +
+        '</div>' 
+    )
+    $('#tutorials').append(
+        '<button id="youtube-link">' + "Learn More" + '</button>'
+    )
+
+    $("#youtube-link").click(function(){
+        console.log("redirect");
+        window.open(abs[button_num-1].link)
+    });   
 }
 
 function renderArmWorkout(){
     $('#tutorials').append(
             
            
-        '<h1 class="workout-title">' + arms[button_num-1].name + '</h1>' +
-        '<p class="random">' + arms[button_num-1].How + '</p>'
-    )    
+        '<h2 class="workout-title">' + arms[button_num-1].name + '</h1>' +
+        '<div class="videos">' +
+            '<video class="video1" autoplay loop>' + 
+            '<source src=' + arms[button_num-1].front_vid + ' type="video/mp4">' +
+            '</video>' +
+            '<video class="video2" autoplay loop>' + 
+            '<source src=' + arms[button_num-1].side_vid + ' type="video/mp4">' +
+            '</video>' +
+        '</div>' +
+        '<div class="description">' +
+            '<h3>How :</h3>' +
+            '<p>' + arms[button_num-1].How + '</p>' +
+            '<h3>Why :</h3>' + 
+            '<p>' + arms[button_num-1].Why + '</p>' +
+        '</div>' 
+    )
+    $('#tutorials').append(
+        '<button id="youtube-link">' + "Learn More" + '</button>'
+    )
+
+    $("#youtube-link").click(function(){
+        console.log("redirect");
+        window.open(arms[button_num-1].link)
+    });   
 }
 
 function renderLegWorkout(){
     $('#tutorials').append(
             
            
-        '<h1 class="workout-title">' + legs[button_num-1].name + '</h1>' +
+        '<h2 class="workout-title">' + legs[button_num-1].name + '</h1>' +
         '<div class="videos">' +
-            '<embed src=' + legs[button_num-1].front_vid + ' autostart="true" class="video1"/></embed>' +
-            '<embed src=' + legs[button_num-1].side_vid + ' autostart="true" class="video2"/></embed>' +
+            '<video class="video1" autoplay loop>' + 
+            '<source src=' + legs[button_num-1].front_vid + ' type="video/mp4">' +
+            '</video>' +
+            '<video class="video2" autoplay loop>' + 
+            '<source src=' + legs[button_num-1].side_vid + ' type="video/mp4">' +
+            '</video>' +
         '</div>' +
         '<div class="description">' +
             '<h3>How :</h3>' +
@@ -207,13 +253,42 @@ function renderLegWorkout(){
             '<p>' + legs[button_num-1].Why + '</p>' +
         '</div>' 
     )
+    $('#tutorials').append(
+        '<button id="youtube-link">' + "Learn More" + '</button>'
+    )
+
+    $("#youtube-link").click(function(){
+        console.log("redirect");
+        window.open(legs[button_num-1].link)
+    });
 }
 
 function renderChestWorkout(){
     $('#tutorials').append(
             
            
-        '<h1 class="workout-title">' + chest[button_num-1].name + '</h1>' +
-        '<p class="random">' + chest[button_num-1].How + '</p>'
+        '<h2 class="workout-title">' + chest[button_num-1].name + '</h1>' +
+        '<div class="videos">' +
+            '<video class="video1" autoplay loop>' + 
+            '<source src=' + chest[button_num-1].front_vid + ' type="video/mp4">' +
+            '</video>' +
+            '<video class="video2" autoplay loop>' + 
+            '<source src=' + chest[button_num-1].side_vid + ' type="video/mp4">' +
+            '</video>' +
+        '</div>' +
+        '<div class="description">' +
+            '<h3>How :</h3>' +
+            '<p>' + chest[button_num-1].How + '</p>' +
+            '<h3>Why :</h3>' + 
+            '<p>' + chest[button_num-1].Why + '</p>' +
+        '</div>' 
     )
+    $('#tutorials').append(
+        '<button id="youtube-link">' + "Learn More" + '</button>'
+    )
+
+    $("#youtube-link").click(function(){
+        console.log("redirect");
+        window.open(chest[button_num-1].link)
+    });
 }

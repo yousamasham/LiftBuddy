@@ -84,8 +84,9 @@ function find_friend(name, filter,  fake_friends){
 		console.log("NAME AND FILTER PROVIDED");
 		fake_friends.filter(user =>{
 			var usr_name = user.name;
+			usr_name = usr_name.toLowerCase();
 			var usr_filter = user.filters;
-			if (usr_name.indexOf(name) >= 0 && find_matching_filter(filter, usr_filter) === true){
+			if (usr_name.indexOf(name.toLowerCase()) >= 0 && find_matching_filter(filter, usr_filter) === true){
 				results.push(user);
 			}
 			
@@ -100,7 +101,8 @@ function find_friend(name, filter,  fake_friends){
 
 		fake_friends.filter(user =>{
 			var usr_name = user.name;
-			if (usr_name.indexOf(name) >= 0){
+			usr_name = usr_name.toLowerCase();
+			if (usr_name.indexOf(name.toLowerCase()) >= 0){
 				results.push(user);
 			}
 		})

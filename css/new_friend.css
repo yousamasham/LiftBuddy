@@ -1,24 +1,44 @@
 
     .navbar {
-    overflow: hidden;
-    background-color: #f1f1f1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 75px;
-  }
-  
-  .navbar a {
-    float:inline-start;
-    display:flexbox;
-    color: #f1f1f1;
-    text-align: center;
-    padding: 14px 0px;
-    text-decoration: none;
-    font-size: 17px;
-    width:20%;
-  }
+        overflow: hidden;
+        background-color: #f1f1f1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width:100%;
+        height: 75px;
+      }
+      
+      .navbar a {
+        padding-top: 12px;
+        text-align: center;
+        overflow: hidden;
+        display: inline;
+        color: #f1f1f1;
+        width:19.5%;
+        height: 75px;
+      }
+      
+      /*.navbar {
+        overflow: hidden;
+        background-color: #f1f1f1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        height: 75px;
+      }
+      
+      .navbar a {
+        float:inline-start;
+        display:flexbox;
+        color: #f1f1f1;
+        text-align: center;
+        padding: 14px 0px;
+        text-decoration: none;
+        font-size: 17px;
+        width:20%;
+      }*/
   
   .navbar a:hover {
     background: #FFD100;
@@ -335,7 +355,7 @@ p {
     grid-template-columns: 1fr;
     grid-template-rows: 1.5fr 1fr 1fr 2.5fr 1fr; /* Picture, Name, Description, Filters, Button */
     width: 100%;
-    height: 85%;
+    height: 400px;
 
     background-color: #d9edf3f9;
     border: 1px solid #000;
@@ -422,26 +442,30 @@ p {
 }
 
 
-@media screen and (max-width: 1350px){
+@media screen and (max-width: 1130px){
     .preview{
-        grid-template-rows: 0.8fr 0.9fr 1fr 1.5fr 1fr;
+
+        height: 425px;
         
     }
 
 
 }
 
-@media screen and (max-width: 1060px){
+@media screen and (max-width: 970px){
     .preview{
-        grid-template-rows: 0.8fr 0.9fr 1fr 1fr 1fr;
+
+        height: 475px;
         
     }
 
 
 }
+
+
 
 @media screen and (max-width: 960px){
- 
+
     .result-short-info > h2{
         font-size: 15px;
     
@@ -451,11 +475,6 @@ p {
         font-size: 14px;
     
     }
-
-}
-
-
-@media screen and (max-width: 900px){
  
     .preview > h1{
         font-size: 28px;

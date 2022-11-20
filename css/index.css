@@ -1,0 +1,141 @@
+body{
+  background-image: linear-gradient(to bottom right, #8BD3E6, #def2f8);
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+.logo {
+  height: 300px;
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footnote{
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat';
+  margin-top: 10px;
+}
+
+.desc {
+  font-family: "Montserrat";
+  text-align: center;
+  font-weight: 800;
+  font-size: xxx-large;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(120, 120, 120);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  visibility: hidden;
+}
+
+.navbar a {
+  float:inline-start;
+  display:flexbox;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 0px;
+  text-decoration: none;
+  font-size: 17px;
+  width:20%;
+}
+
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar a.active {
+  background-color: rgb(0, 0, 200);
+  color: white;
+}
+
+.login {
+  overflow: hidden;
+  width: 30%;
+  padding: 16px;
+  font-size: large;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Montserrat';
+}
+
+.login input{
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 30px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login #Password{
+  margin-top: 10px;
+}
+
+.login label{
+  display: block;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+}
+
+.login a{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+  font-size: small;
+  margin-bottom: 25px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.login button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  background-color: #ac1455;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.login button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login .error{
+  display: none;
+  color: red;
+  font-size: small;
+}

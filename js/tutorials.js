@@ -156,10 +156,9 @@ $("[id*=-button-]").each(function(){
             renderAbWorkout();
         }
         
-        $('#tutorials').append(
+        $('.title').append(
             '<button id="back-button">' + "Back" + '</button>'
         )
-
 
         $("#back-button").click(function(){
             console.log("here");

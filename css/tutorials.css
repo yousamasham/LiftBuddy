@@ -44,18 +44,12 @@ body{
 
 .grid {
   display: grid;
-  /* background-color: aqua; */
   width: 80%;
   height: 100%;
   align-content: center;
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto;
   margin: auto auto;
-  /* grid-template-areas: 
-    "arms  arms legs legs" 
-    "arms  arms legs legs" 
-    "chest chest chest  abs"
-    "chest chest chest  abs"; */
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -64,11 +58,16 @@ body{
 }
 
 .title{
+  display: inline;
   color: black;
-  padding-bottom: 2%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  padding-bottom: 5%;
+  text-align: center; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.tutorial-heading{
+  padding-bottom: 50px;
 }
 
 .tutorials {
@@ -96,10 +95,6 @@ body{
   /* color: white; */
 }
 
-.arms {
-  /* background-color: lightcoral; */
-  margin-left: auto;
-}
 
 @media only screen and (max-width:904px) {
   .grid{grid-template-rows: 4fr 4fr;}
@@ -117,17 +112,12 @@ body{
   .box-content{margin-top: -7%;}
 }
 
-.legs {
-  /* background-color: lightskyblue; */
-}
-
-.chest {
-  /* background-color: lightsalmon; */
+.arms {
   margin-left: auto;
 }
 
-.abs {
-  /* background-color: lightgreen; */
+.chest {
+  margin-left: auto;
 }
 
 .pic-box {
@@ -149,8 +139,6 @@ body{
   height: 80%;
 }
 
-
-
 .buttons-area {
   display: grid;
   row-gap: 5%;
@@ -169,8 +157,6 @@ h1{
 
 button{
   border-radius: 20px;
-  /* background-color: #FDBF57; */
   background-color: #D2D755;
-  /* color: white; */
   font-family: 'Montserrat';
 }

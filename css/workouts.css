@@ -11,14 +11,11 @@
 }
 
 #back-button{
-  position:absolute;
-  width: 10%;
-  top: 10%;
-  left: 5%;
+  width: 75px;
   background-color: #7A003C;
   color: white;
   font-family: 'Montserrat';
-  width: 75px;
+  margin-right: 0;
 }
 
 .videos{

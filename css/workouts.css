@@ -12,7 +12,7 @@
 
 #back-button{
   width: 75px;
-  background-color: #7A003C;
+  background-color: #ac1455;
   color: white;
   font-family: 'Montserrat';
   margin-right: 0;
@@ -95,4 +95,12 @@ h3{
 
 p{
   font-family: 'Montserrat';
+}
+
+.title > #back-button:hover{
+  background-color: #7A003C;
+}
+
+.tutorials > #youtube-link:hover{
+  background-color: #efefef;
 }

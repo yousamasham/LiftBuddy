@@ -252,6 +252,7 @@
   text-transform: uppercase;
   background-color: #FDBF57;
 }
+
 .new-records3-button2 {
   color: var(--dl-color-gray-black);
   font-size: 150%;
@@ -348,4 +349,8 @@
   .new-records3-text7 {
     align-self: center;
   }
+}
+
+button:hover{
+  background-color: #efefef;
 }

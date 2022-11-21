@@ -33,6 +33,9 @@
   background-color: var(--dl-color-gray-white);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  margin-top: 75px;
+  padding-bottom: 5%;
 }
 .new-records2-prev {
   color: var(--dl-color-gray-black);
@@ -182,6 +185,7 @@
   color: #f1f1f1;
   width:19.5%;
   height: 75px;
+  padding-left: 7.5%;
 }
 
 .navbar a:hover {

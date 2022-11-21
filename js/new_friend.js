@@ -89,15 +89,12 @@ function find_friend(name, filter,  fake_friends){
 			if (usr_name.indexOf(name.toLowerCase()) >= 0 && find_matching_filter(filter, usr_filter) === true){
 				results.push(user);
 			}
-			
-		
 		});
 		return results;
 		
 	//only name provided
 	}else if (name && filter.length === 0){ 
-		console.log("Name provided, NO FILTER");
-		//console.log(fake_friends);
+		//console.log("Name provided, NO FILTER");
 
 		fake_friends.filter(user =>{
 			var usr_name = user.name;
@@ -110,9 +107,7 @@ function find_friend(name, filter,  fake_friends){
 
 	//only filter provided	
 	}else{
-		console.log("Name provided, NO FILTER");
-		//console.log(fake_friends);
-
+		//console.log("Name provided, NO FILTER");
 		fake_friends.filter(user =>{
 			var usr_filter = user.filters;
 			if (find_matching_filter(filter, usr_filter) === true){
@@ -123,6 +118,7 @@ function find_friend(name, filter,  fake_friends){
 	}
 }
 
+// Render all filter buttons from filters_arr
 $('#filters').ready(function(){
 	for (let i = 0; i < filters_arr.length; i++){
 		$('#filters').append(
@@ -155,7 +151,7 @@ function generate_results(usr_name, usr_description, i){
 '</div>'  ;
 }
 
-// make into functions	
+// Click Function when "search" is clicked
 $('#name_search').ready(function() {
 	$('#search_button').click(function() {
 			$('#results').empty();
@@ -163,7 +159,6 @@ $('#name_search').ready(function() {
             var search_name = $("#name_search").val();
 			console.log("Search Name = " + typeof(search_name));
 			results = find_friend(search_name, filters_selected, fake_friends);
-			console.log(results);
 
 			for (let i = 0; i < results.length; i++) {
 				const user = results[i];
@@ -184,12 +179,8 @@ $('#name_search').ready(function() {
 	});
 });
 
-
-
-
 function create_results(){
 	results = fake_friends;
-	console.log(results);
 	for (let i = 0; i < results.length; i++) {
 		const user = results[i];
 		const usr_name = user.name;
@@ -208,65 +199,45 @@ function create_results(){
 				'<h2>' + usr_name + '</h2>'+
 				'<p>"' + usr_description + '"</p>' + 
 			'</div>'+
-
 			'<div class="results-button-grid">' + 
 				'<button class="results-button-add" id=_add-' + i + '> Add' + 
 				'</button>' + 
-
 				'<button class="results-button-view" id=_view-' + i + '> View' + 
-				'</button>' + 
-			
+				'</button>' + 		
 			'</div>' +
-
-			
 		'</div>' )
 
-		
 		}
 		$('#preview').empty();
 		$('#preview').append(
 			 
 				'<h1> Select view button to preview a profile </h1>'
 			
-			 )
+			)
 
 }
-
-
-
 let selected_usr = -1;
 
-create_results();
-
-
+create_results(); // create results on loading of New Friend page
 
 $("[id^=_view-]").click(function() {
 	let new_selected_usr = ($(this).attr("id"));
 	new_selected_usr = new_selected_usr.slice(new_selected_usr.indexOf("-") + 1);
-	console.log(new_selected_usr);
-
 
 	let get_filters = [];
 	for (let i = 0; i < fake_friends[new_selected_usr].filters.length; i++){
 		get_filters.push(filters_arr[fake_friends[new_selected_usr].filters[i]]);
 	}
 
-
-	console.log(get_filters);
-	
 	$('#preview').empty();
 	$('#preview').append(
-		
 		'<div class="img-border">' + 
 			'<img src="assets/img/icons8-user-50.png" class="preview-img-prop">' +
 		'</div>' + 
 		'<h1>' + results[new_selected_usr].name + '</h1>'+
 		'<p> "' + results[new_selected_usr].description + '"</p>'
-		
-	
 	 );
 	 $('#preview').append(
-
 		'<div class="filters" id="preview-filters">'
 		 ); 
 
@@ -274,15 +245,12 @@ $("[id^=_view-]").click(function() {
 		
 			$('#preview-filters').append(
 				'<button class="filter-button">' + get_filters[i] + '</button>'
-
 			);
-
 		}
 
 		$('#preview-filters').append(
 			'</div>'
 		); 
-
 
 		$('#preview').append(
 			'<button class="preview-add-button" id="_add_preview-' + new_selected_usr + '"> Add' + 
@@ -296,11 +264,9 @@ $("[id^=_view-]").click(function() {
 		$("[id^=_add_preview-]").each(function() {
 			$(this).click(function (){
 					if ($(this).is(":disabled") !== true){
-						console.log($("#_add-" + new_selected_usr ).is(":disabled"));
-
 						let selected_usr = ($(this).attr("id"));
 						selected_usr = selected_usr.slice(selected_usr.indexOf("w-") + 2);
-						console.log(selected_usr);
+						
 						alert('Friend request sent to ' + results[selected_usr].name  );
 						($(this)).prop('disabled', true);
 						friends_added.push(new_selected_usr);
@@ -314,8 +280,8 @@ $("[id^=_view-]").click(function() {
 		
 
 	 if (new_selected_usr !== selected_usr){
-	 	$('#_results-'+new_selected_usr).addClass("selected-item");
-		 $('#_results-'+selected_usr).removeClass("selected-item");
+	 	$('#_results-'+new_selected_usr).addClass("selected-item"); //highlight the new user
+		$('#_results-'+selected_usr).removeClass("selected-item"); //remove highlight from a different user already selected
 		selected_usr = new_selected_usr;
 	}
 
@@ -327,7 +293,7 @@ $("[id^=_add-]").each(function() {
 	$(this).click(function (){
 		let selected_usr = ($(this).attr("id"));
 		selected_usr = selected_usr.slice(selected_usr.indexOf("-") + 1);
-		console.log(selected_usr);
+
 		alert('Friend request sent to ' + results[selected_usr].name  );
 
 		$(this).prop('disabled', true);
@@ -348,20 +314,15 @@ $('#filters').ready(function () {
 			clicked_filter = clicked_filter.slice(clicked_filter.indexOf("on-") + 3);
 			clicked_filter = parseInt(clicked_filter,10);
 
-
 			if (filters_selected.includes(clicked_filter) === true){
 				$(this).removeClass("filter-button-selected");
 				filters_selected.splice(filters_selected.indexOf(clicked_filter),1);
-			}
-		
-			else{
+
+			}else{
 				$(this).addClass("filter-button-selected");
-	
 				filters_selected.push(parseInt(clicked_filter,10));
 			}
 
-			console.log(filters_selected);
-	
 		})
 		
 	})
@@ -376,11 +337,13 @@ $('#clear-button').click(function(){
 		for (let i = 0; i < filters_arr.length; i++){
 			$('#_filter-button-' + i).removeClass("filter-button-selected");
 		}
+
+		if (selected_usr >= 0){
+			$('#_results-'+selected_usr).removeClass("selected-item");
+		}
+
+		selected_usr = -1;
+
 		$('#name_search').val('');
 
-
 });
-
-
-
-//export  {fake_friends};

@@ -57,17 +57,22 @@ body{
   column-gap: 5%;
 }
 
-.title{
-  display: inline;
-  color: black;
-  padding-bottom: 5%;
-  text-align: center; 
-  align-items: center; 
-  justify-content: center; 
-}
+
 
 .tutorial-heading{
-  padding-bottom: 50px;
+
+    background-color: white;
+    color: #7A003C;
+    display: flex;
+    font-family: 'Montserrat';
+    position: -webkit-sticky;
+    position: sticky;
+    text-transform: uppercase;
+    top: 0;
+    justify-content: center;
+    font-weight: 700;
+  
+    padding-bottom: 50px;
 }
 
 .tutorials {
@@ -150,15 +155,22 @@ body{
   padding-bottom: 2%;
 }
 
-h1{
-  margin-top: 0%;
+h1 {
   font-family: 'Montserrat';
+  
+  font-size: 40px;
+  text-align: center;
+  font-weight: 400;
+  
 }
+
+
 
 button{
   border-radius: 20px;
   background-color: #D2D755;
   font-family: 'Montserrat';
+  color: #000;
 }
 
 .buttons-area > button:hover{

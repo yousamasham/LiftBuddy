@@ -7,7 +7,7 @@
     display: flex;
 }
 
-.date {
+#date {
     background-color: white;
     box-sizing: border-box;
     font-family: 'Montserrat';
@@ -17,7 +17,7 @@
     vertical-align: middle;
 }
 
-.date:focus {
+#date:focus {
     border: 2px inset #FDBF57;
 }
 
@@ -53,7 +53,7 @@ html,body {
     text-transform: uppercase;
 }
 
-.metric {
+#metric {
     background-color: white;
     border: 2px inset #555;
     box-sizing: border-box;
@@ -64,7 +64,7 @@ html,body {
     vertical-align: middle;
 }
 
-.metric:focus {
+#metric:focus {
     border: 2px inset #FDBF57;
 }
 

@@ -10,24 +10,29 @@
     <script src="js/progress.js"></script>
 </head>
 <body>
-    <script src="js/progress_autocomplete.js"></script>
     <h1 class="title">Progress</h1>
-    <div class="progress">
-        <form autocomplete="off" class="question">
-            <label for="metric">How has my</label>
-            <select id="metric" name="metric">
-                <option value="physique">PHYSIQUE</option>
-                <option value="bench press: weight">BENCH PRESS: WEIGHT</option>
-            </select>
-            <label for="date">changed since</label>
-            <input type="date" id="date" name="date" min="2022-01-01" max="">
-            <div>?</div>
-        </form>
-        <div class="button-holder">
-            <button class="enter" type="submit">Let's find out!</button>
-        </div>
-        <ul class="imagesList">
-        </ul>
+    <form autocomplete="off" class="question">
+        <label for="metric">How has my</label>
+        <select id="metric" name="metric">
+            <option value="physique">PHYSIQUE</option>
+            <option value="bench press: weight">BENCH PRESS: WEIGHT</option>
+        </select>
+        <label for="date">changed since</label>
+        <input type="date" id="date" name="date" min="2022-01-01" max="">
+        <div>?</div>
+    </form>
+    <div class="button-holder">
+        <button class="enter" type="submit">Let's find out!</button>
+    </div>
+    <div class="workout-metrics">
+        <img 
+            class="img-posts"
+            src="assets/img/weight_plot.png"
+            alt="Plot of Weight vs Time"/>
+        <img
+            class="img-posts"
+            src="assets/img/workout_insights.gif"
+            alt="Workout Insights"/>
     </div>
 </body>
 </html>

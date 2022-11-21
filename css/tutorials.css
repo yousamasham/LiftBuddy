@@ -171,6 +171,7 @@ button{
   background-color: #D2D755;
   font-family: 'Montserrat';
   color: #000;
+  margin-left: 6.5%;
 }
 
 .buttons-area > button:hover{

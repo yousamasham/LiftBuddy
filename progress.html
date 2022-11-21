@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Less necessary since Edge's migration to Chromium -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lift Buddy</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,500,600,800' rel='stylesheet'>
+    <link rel="stylesheet" href="css/progress.css"/>
+    <script src="js/progress.js"></script>
+</head>
+<body>
+    <h1 class="title">Progress</h1>
+    <form autocomplete="off" class="question">
+        <label for="metric">How has my</label>
+        <select id="metric" name="metric">
+            <option value="physique">PHYSIQUE</option>
+            <option value="bench press: weight">BENCH PRESS: WEIGHT</option>
+        </select>
+        <label for="date">changed since</label>
+        <input type="date" id="date" name="date" min="2022-01-01" max="">
+        <div>?</div>
+    </form>
+    <div class="button-holder">
+        <button class="enter" type="submit">Let's find out!</button>
+    </div>
+    <div class="workout-metrics">
+        <img 
+            class="img-posts"
+            src="assets/img/weight_plot.png"
+            alt="Plot of Weight vs Time"/>
+        <img
+            class="img-posts"
+            src="assets/img/workout_insights.gif"
+            alt="Workout Insights"/>
+    </div>
+
+    <div class="navbar">
+        <a  href="homepage.html">
+            <img src="assets/img/icons8-home-50.png" alt="Home" />
+        </a>
+        <a class="active" href="progress.html">
+            <img
+                src="assets/img/icons8-increase-50.png"
+                alt="Progress"
+            />
+        </a>
+        <a href="new-records-1.html">
+            <img
+                src="assets/img/icons8-add-50.png"
+                alt="Add Exercise"
+            />
+        </a>
+        <a href="new_friend.html">
+            <img
+                src="assets/img/icons8-user-account-50.png"
+                alt="Find New Friends"
+            />
+        </a>
+        <a href="tutorials.html">
+            <img
+                src="assets/img/icons8-video-playlist-50.png"
+                alt="Tutorials"
+            />
+        </a>
+    </div>
+</body>
+</html>

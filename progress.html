@@ -9,14 +9,22 @@
     <link rel="stylesheet" href="css/progress.css"/>
 </head>
 <body>
+    <script src="js/progress_autocomplete.js"></script>
     <h1 class="title">Progress</h1>
-    <form class="question">
-        <label for="metric">How has my</label>
-        <input type="text" class="metric" placeholder="e.g., physique" name="metric">
-        <label for="">changed since</label>
-        <input type="date" class="date" name="date" min="2022-01-01" max="">
-        <div>?</div>
-    </form>
-    <button type="submit" class="enter">Let's find out!</button>
+    <div class="progress">
+        <form autocomplete="off" class="question">
+            <label for="metric">How has my</label>
+            <select class="metric" name="metric">
+                <option value="physique">Physique</option>
+                <option value="bench press: weight">Bench Press: Weight</option>
+            </select>
+            <label for="date">changed since</label>
+            <input type="date" class="date" name="date" min="2022-01-01" max="">
+            <div>?</div>
+        </form>
+        <div class="button-holder">
+            <button class="enter" type="submit">Let's find out!</button>
+        </div>
+    </div>
 </body>
 </html>
